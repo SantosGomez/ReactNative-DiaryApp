@@ -41,8 +41,6 @@ export default function LoginScreen({navigation}) {
         style={[
           styles.input
         ]}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
         placeholder='Nombre de Usuario'
         value={username}
         onChangeText={setUsername}
@@ -78,8 +76,20 @@ export default function LoginScreen({navigation}) {
         disabled={!username || !password}
         activeOpacity={0.7}
       >
-        <Text style={styles.loginButtonText}>
+        <Text style={styles.loginButtonText }>
           Iniciar Sesión
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[
+            styles.registerButton
+        ]}
+        onPress={() => navigation.navigate('Register')}
+
+      >
+        <Text style={styles.loginButtonText}>
+            ¿No tienes cuenta? Regístrate
         </Text>
       </TouchableOpacity>
 
@@ -165,8 +175,21 @@ export const styles = StyleSheet.create({
   },
 
   loginButtonText: {
-    color: 'white',
+    color: '#000',
     fontSize: 16,
     fontWeight: 'bold',
   },
+
+  registerButton: {
+    backgroundColor: '#eda2d9',
+    width: 280,
+    height: 50,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    borderWidth: 2,
+    borderColor:'#fae1fa',
+  },
+
 });
