@@ -1,8 +1,10 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import LoginScreen from './Screens/loginScreen';
-import RegisterScreen from './Screens/RegisterScreen';
+import HistoryScreen from "./Screens/historyScreen";
+import LoginScreen from "./Screens/loginScreen";
+import NotesScreen from "./Screens/notesScreen";
+import RegisterScreen from "./Screens/registerScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +14,8 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="History" component={HistoryScreen} />
+        <Stack.Screen name="Notes" component={NotesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
